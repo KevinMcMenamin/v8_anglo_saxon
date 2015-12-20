@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+	<data>
+        <record id="account_anglo_saxon_company" model="ir.ui.view">
+            <field name="name">account.anglo.saxon.company.config</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <page string="Configuration" position="inside">
+                    <group string="Account Anglo Saxon Process" colspan="5">
+                    	<field name="price_variance_writeoff_amount" />
+                    	<field name="price_variance_writeoff_account" />
+                    	<field name="stock_input_account" />
+                    	<field name="stock_output_account" />
+                    </group>
+                </page>
+            </field>
+        </record>
+    </data>
+</openerp>

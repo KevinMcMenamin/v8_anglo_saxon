@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        
+        <record model="ir.ui.view" id="anglo_saxon_unreconciled_report_view">
+            <field name="name">Anglo-Saxon Unreconciled Transactions Report</field>
+            <field name="model">anglo.saxon.unreconciled.report</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form col="3" string="Anglo-Saxon Unreconciled Transactions Report">
+                    <group colspan="4" col="4" >
+                    	<field name="account_id"/>
+                    	<field name="period_id"/>
+                    </group>
+                    <group colspan="4" col="4">
+                    	<button name="button_process" string="Run Report" type="object" icon="gtk-ok"/>
+                    	<button special="cancel" icon="gtk-cancel" string="Close"/>
+                    </group>
+                    <separator string ="" colspan="4"/>
+                    <group colspan="4">
+                    	<field name="report_name" invisible="1"/>
+                        <field name="data" filename="report_name"/>
+                     </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_anglo_saxon_unreconciled_report_view" model="ir.actions.act_window">
+            <field name="name">Anglo-Saxon Unreconciled Transactions Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">anglo.saxon.unreconciled.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+       	
+       	 <menuitem	action="action_anglo_saxon_unreconciled_report_view"
+        			id="menu_action_anglo_saxon_unreconciled_report_view"
+					parent="account.menu_finance_generic_reporting"
+					groups="account.group_account_manager,account.group_account_user"
+       				sequence="95" />
+       	
+	</data>
+</openerp>

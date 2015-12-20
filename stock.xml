@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record model="ir.ui.view" id="view_picking_form_extension">
+			<field name="name">stock.picking.form.extension</field>
+			<field name="model">stock.picking</field>
+			<field name="inherit_id" ref="stock.view_picking_form"/>
+			<field name="arch" type="xml">
+                <xpath expr="//page[@string='Additional Info']/group[last()]" position="after">
+	                <separator string="Invoice Information"/>
+	                <group>
+	                	<field name="invoice_ids" colspan="4" nolabel="1" readonly="1">
+	                		<tree>
+	                			<field name="internal_number"/>
+	                			<field name="date_invoice"/>
+	                			<field name="type"/>
+	                			<field name="currency_id"/>
+	                			<field name="amount_untaxed"/>
+	                			<field name="amount_total"/>
+	                			<field name="state" invisible="1"/>
+	                		</tree>
+	                	</field>
+	                </group>
+                </xpath>				
+			</field>
+		</record>
+	</data>
+</openerp>
